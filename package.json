@@ -15,7 +15,12 @@
     "node": ">=4"
   },
   "main": "src/index.js",
-  "scripts": {},
-  "devDependencies": {},
+  "scripts": {
+    "test": "jshint . && jscs ."
+  },
+  "devDependencies": {
+    "jscs": "^3.0.7",
+    "jshint": "^2.9.4"
+  },
   "dependencies": {}
 }
