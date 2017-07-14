@@ -47,17 +47,17 @@ describe('epfl-people-api module', function() {
 
   it('should find sciper 128871', function() {
     return epflPeopleApi.findBySciper(128871, 'en').then(function(res) {
-      res[0].name.should.equal('Duratti');
-      res[0].firstname.should.equal('Lindo');
-      res[0].office.should.equal('INN 015');
+      res.name.should.equal('Duratti');
+      res.firstname.should.equal('Lindo');
+      res.office.should.equal('INN 015');
     });
   });
 
   it('should find sciper 157489', function() {
     return epflPeopleApi.findBySciper(157489, null).then(function(res) {
-      res[0].name.should.equal('Boatto');
-      res[0].firstname.should.equal('Laurent');
-      res[0].office.should.equal('INN 014');
+      res.name.should.equal('Boatto');
+      res.firstname.should.equal('Laurent');
+      res.office.should.equal('INN 014');
     });
   });
 

@@ -22,7 +22,8 @@ exports.findBySciper = function(sciper, locale) {
   locale = locale || 'en';
 
   return search(sciper, locale).then(function(response) {
-    return JSON.parse(response.body);
+    var data = JSON.parse(response.body);
+    return data[0];
   }).catch(function(error) {
     return error;
   });
