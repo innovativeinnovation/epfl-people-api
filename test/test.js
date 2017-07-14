@@ -12,8 +12,22 @@ var epflPeopleApi = require('../src/index.js');
 
 describe('epfl-people-api module', function() {
 
-  it('should throw an exception with a bad sciper', function() {
+  it('should throw an exception with sciper xxx', function() {
     return epflPeopleApi.findBySciper('xxx', 'en').then(function() {
+    }).catch(function(err) {
+      err.message.should.equal('Expected a sciper');
+    });
+  });
+
+  it('should throw an exception with sciper 69', function() {
+    return epflPeopleApi.findBySciper(69, 'en').then(function() {
+    }).catch(function(err) {
+      err.message.should.equal('Expected a sciper');
+    });
+  });
+
+  it('should throw an exception with sciper 1000051', function() {
+    return epflPeopleApi.findBySciper(1000051, 'en').then(function() {
     }).catch(function(err) {
       err.message.should.equal('Expected a sciper');
     });
@@ -36,6 +50,14 @@ describe('epfl-people-api module', function() {
       res[0].name.should.equal('Duratti');
       res[0].firstname.should.equal('Lindo');
       res[0].office.should.equal('INN 015');
+    });
+  });
+
+  it('should find sciper 157489', function() {
+    return epflPeopleApi.findBySciper(157489, null).then(function(res) {
+      res[0].name.should.equal('Boatto');
+      res[0].firstname.should.equal('Laurent');
+      res[0].office.should.equal('INN 014');
     });
   });
 

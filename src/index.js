@@ -15,7 +15,7 @@ var search = function(q,locale) {
 };
 
 exports.findBySciper = function(sciper, locale) {
-  if (sciper < 100000 && sciper > 999999) {
+  if (sciper < 100000 || sciper > 999999) {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
 
