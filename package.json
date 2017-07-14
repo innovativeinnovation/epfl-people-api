@@ -16,11 +16,16 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "test": "jshint . && jscs ."
+    "test": "jshint . && jscs . && mocha"
   },
   "devDependencies": {
+    "chai": "^4.1.0",
     "jscs": "^3.0.7",
-    "jshint": "^2.9.4"
+    "jshint": "^2.9.4",
+    "mocha": "^3.4.2",
+    "rewire": "^2.5.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "got": "^7.1.0"
+  }
 }

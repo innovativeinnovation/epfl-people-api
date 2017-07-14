@@ -10,5 +10,9 @@
   "undef": true,
   "unused": false,
   "strict": true,
-  "globals": {}
+  "globals": {
+    "describe": true,
+    "it": true,
+    "Promise": true
+  }
 }
