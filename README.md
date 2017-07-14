@@ -39,10 +39,10 @@ Usage
 ```javascript
 var epflPeopleApi = require('epfl-people-api');
 
-epflPeopleApi.findBySciper(128871, 'en').then(function(res) {
-  console.log(res[0].name);      //=> 'Duratti'
-  console.log(res[0].firstname); //=> 'Lindo'
-  console.log(res[0].office);    //=> 'INN 015'
+epflPeopleApi.findBySciper(128871, 'en').then(function(person) {
+  console.log(person.name);      //=> 'Duratti'
+  console.log(person.firstname); //=> 'Lindo'
+  console.log(person.office);    //=> 'INN 015'
 });
 ```
 
