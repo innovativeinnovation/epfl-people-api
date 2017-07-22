@@ -33,6 +33,13 @@ describe('epfl-people-api module', function() {
     });
   });
 
+  it('should throw an exception with sciper 100000', function() {
+    return epflPeopleApi.findBySciper(100000, 'en').then(function() {
+    }).catch(function(err) {
+      err.message.should.equal('Sciper does not exist');
+    });
+  });
+
   it('should fail with a wrong service url', function(done) {
     var epflPeopleApiMock = rewire('../src/index.js');
     epflPeopleApiMock.__set__('SEARCH_URL', 'foobar');
