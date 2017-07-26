@@ -10,7 +10,7 @@ var rewire = require('rewire');
 
 var epflPeopleApi = require('../src/index.js');
 
-describe('epfl-people-api module', function() {
+describe('epfl-people-api findBySciper', function() {
 
   it('should throw an exception with sciper xxx', function() {
     return epflPeopleApi.findBySciper('xxx', 'en').then(function() {
