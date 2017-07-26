@@ -43,6 +43,16 @@ epflPeopleApi.findBySciper(128871, 'en').then(function(person) {
   console.log(person.name);      //=> 'Duratti'
   console.log(person.firstname); //=> 'Lindo'
   console.log(person.office);    //=> 'INN 015'
+}).catch(function(err) {
+  console.log(err);
+});
+
+epflPeopleApi.findByEmail('lindo.duratti@epfl.ch', 'en').then(function(person) {
+  console.log(person.name);      //=> 'Duratti'
+  console.log(person.firstname); //=> 'Lindo'
+  console.log(person.office);    //=> 'INN 015'
+}).catch(function(err) {
+  console.log(err);
 });
 ```
 
@@ -60,6 +70,25 @@ Returns a Promise with a person as parameter.
 Type: `number`
 
 6-digit unique EPFL identification number.
+
+##### locale
+
+Type: `string`<br>
+Default: `en`
+
+Returns informations in `en` or `fr`.
+
+### .findByEmail(email, locale)
+
+Type: `function`
+
+Returns a Promise with a person as parameter.
+
+##### email
+
+Type: `string`
+
+A valid email address.
 
 ##### locale
 
