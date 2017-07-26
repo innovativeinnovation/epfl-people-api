@@ -52,11 +52,18 @@ describe('epfl-people-api findBySciper', function() {
     });
   });
 
-  it('should find sciper 128871', function() {
+  it('should find sciper 128871 in en', function() {
     return epflPeopleApi.findBySciper(128871, 'en').then(function(res) {
       res.name.should.equal('Duratti');
       res.firstname.should.equal('Lindo');
       res.office.should.equal('INN 015');
+      res.position.should.equal('Computer Scientist');
+    });
+  });
+
+  it('should find sciper 128871 in fr', function() {
+    return epflPeopleApi.findBySciper(128871, 'fr').then(function(res) {
+      res.position.should.equal('Informaticien');
     });
   });
 

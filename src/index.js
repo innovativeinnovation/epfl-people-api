@@ -11,7 +11,7 @@ var validator = require('validator');
 var SEARCH_URL = 'https://search.epfl.ch/json/ws_search.action';
 
 var buildsearchUrl = function(q,locale) {
-  var params = '?q=' + q + '&request_locle=' + locale;
+  var params = '?q=' + q + '&request_locale=' + locale;
   return SEARCH_URL + params;
 };
 
