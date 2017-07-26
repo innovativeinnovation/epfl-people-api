@@ -29,6 +29,7 @@
     "rewire": "^2.5.2"
   },
   "dependencies": {
-    "got": "^7.1.0"
+    "got": "^7.1.0",
+    "validator": "^8.0.0"
   }
 }
