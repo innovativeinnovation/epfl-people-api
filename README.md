@@ -58,6 +58,12 @@ epflPeopleApi.find('Lindo', 'en').then(function(list) {
 }).catch(function(err) {
   console.log(err);
 });
+
+epflPeopleApi.hasPhoto(128871).then(function(hasPhoto) {
+  console.log(hasPhoto); //=> False
+}).catch(function(err) {
+  console.log(err);
+});
 ```
 
 API
@@ -119,6 +125,18 @@ Type: `string`<br>
 Default: `en`
 
 Returns informations in `en` or `fr`.
+
+### .hasPhoto(sciper)
+
+Type: `function`
+
+Returns a Promise with a boolean as parameter.
+
+##### sciper
+
+Type: `number`
+
+6-digit unique EPFL identification number.
 
 
 Contributing
