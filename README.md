@@ -48,9 +48,13 @@ epflPeopleApi.findBySciper(128871, 'en').then(function(person) {
 });
 
 epflPeopleApi.findByEmail('lindo.duratti@epfl.ch', 'en').then(function(person) {
-  console.log(person.name);      //=> 'Duratti'
   console.log(person.firstname); //=> 'Lindo'
-  console.log(person.office);    //=> 'INN 015'
+}).catch(function(err) {
+  console.log(err);
+});
+
+epflPeopleApi.find('Lindo', 'en').then(function(list) {
+  console.log(list[0].firstname); //=> 'Lindo'
 }).catch(function(err) {
   console.log(err);
 });
@@ -89,6 +93,25 @@ Returns a Promise with a person as parameter.
 Type: `string`
 
 A valid email address.
+
+##### locale
+
+Type: `string`<br>
+Default: `en`
+
+Returns informations in `en` or `fr`.
+
+### .find(q, locale)
+
+Type: `function`
+
+Returns a Promise with a list of person as parameter.
+
+##### q
+
+Type: `string`
+
+The term to look for.
 
 ##### locale
 
