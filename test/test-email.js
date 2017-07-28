@@ -6,7 +6,6 @@
 'use strict';
 
 var should = require('chai').should();
-var rewire = require('rewire');
 
 var epflPeopleApi = require('../src/index.js');
 

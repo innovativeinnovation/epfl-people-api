@@ -58,3 +58,18 @@ exports.findByEmail = function(email, locale) {
     });
   });
 };
+
+exports.find = function(string, locale) {
+  locale = locale || 'en';
+
+  var url = buildsearchUrl(string, locale);
+
+  return new Promise(function(resolve, reject) {
+    got(url).then(function(response) {
+      var data = JSON.parse(response.body);
+      resolve(data);
+    }).catch(function(err) {
+      reject(err);
+    });
+  });
+};
