@@ -25,11 +25,11 @@
     "istanbul": "^0.4.5",
     "jscs": "^3.0.7",
     "jshint": "^2.9.4",
-    "mocha": "^3.5.3",
+    "mocha": "^4.0.0",
     "rewire": "^2.5.2"
   },
   "dependencies": {
     "got": "^7.1.0",
-    "validator": "^8.2.0"
+    "validator": "^9.0.0"
   }
 }
