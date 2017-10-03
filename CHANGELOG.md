@@ -1,6 +1,10 @@
 Changelog
 =========
 
+### v0.2.1 / 2017-10-03
+
+  - Update dependencies
+
 ### v0.2.0 / 2017-07-28
 
   - Add function `find`
