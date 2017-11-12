@@ -21,15 +21,16 @@
     "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
+    "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
     "chai": "^4.1.2",
     "istanbul": "^0.4.5",
     "jscs": "^3.0.7",
     "jshint": "^2.9.4",
-    "mocha": "^4.0.0",
-    "rewire": "^2.5.2"
+    "mocha": "^4.0.1",
+    "rewire": "^3.0.0"
   },
   "dependencies": {
     "got": "^7.1.0",
-    "validator": "^9.0.0"
+    "validator": "^9.1.1"
   }
 }
