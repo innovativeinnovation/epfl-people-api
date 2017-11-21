@@ -47,7 +47,7 @@ describe('epfl-people-api findByEmail', function() {
     ).then(function(res) {
       res.name.should.equal('Boatto');
       res.firstname.should.equal('Laurent');
-      res.office.should.equal('INN 014');
+      res.office.should.equal('MA B0 519');
     });
   });
 
