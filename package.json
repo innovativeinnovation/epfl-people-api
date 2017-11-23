@@ -1,6 +1,6 @@
 {
   "name": "epfl-people-api",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "EPFL people directory API",
   "keywords": [
     "EPFL",

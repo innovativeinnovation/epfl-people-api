@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### v1.0.0 / 2017-11-23
+
+  - Update dependencies
+  - Fix unit test
+
 ### v0.2.1 / 2017-10-03
 
   - Update dependencies
