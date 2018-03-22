@@ -1,6 +1,14 @@
 Changelog
 =========
 
+### v1.1.0 / 2018-03-22
+
+  - Move to eslint
+  - Update dependencies
+  - Update license copyright date
+  - Disable `package-lock.json`
+  - Fix alt attribute of license badge
+
 ### v1.0.0 / 2017-11-23
 
   - Update dependencies
