@@ -12,7 +12,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/epfl-devrun/epfl-people-api.git",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "main": "src/index.js",
   "scripts": {
