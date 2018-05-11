@@ -1,6 +1,12 @@
 Changelog
 =========
 
+### v2.0.0 / 2018-05-11
+
+  - Drop support for Node < 6
+  - Update dependencies
+  - Update eslint config
+
 ### v1.1.0 / 2018-03-22
 
   - Move to eslint
