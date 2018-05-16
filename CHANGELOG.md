@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### v2.0.1 / 2018-05-16
+
+  - Rewrite code
+  - Move to david-dm (watching deps)
+
 ### v2.0.0 / 2018-05-11
 
   - Drop support for Node < 6
