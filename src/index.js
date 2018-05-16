@@ -3,98 +3,84 @@
  * See the LICENSE file for more details.
  */
 
-var got = require('got');
-var validator = require('validator');
+const got = require('got');
+const validator = require('validator');
 
-var SEARCH_URL = 'https://search.epfl.ch/json/ws_search.action';
-var PHOTO_URL = 'https://people.epfl.ch/cgi-bin/people/getPhoto?id=';
+const SEARCH_URL = 'https://search.epfl.ch/json/ws_search.action';
+const PHOTO_URL = 'https://people.epfl.ch/cgi-bin/people/getPhoto?id=';
 
-var buildsearchUrl = function (q, locale) {
-  var params = '?q=' + q + '&request_locale=' + locale;
-  return SEARCH_URL + params;
+let buildsearchUrl = (q, locale = 'en') => {
+  const queryParameters = '?q=' + q + '&request_locale=' + locale;
+  return SEARCH_URL + queryParameters;
 };
 
-var isSciper = function (sciper) {
+let isSciper = (sciper) => {
   if (sciper !== parseInt(sciper, 10) || sciper < 100000 || sciper > 999999) {
     return false;
   }
   return true;
 };
 
-exports.findBySciper = function (sciper, locale) {
+exports.findBySciper = (sciper, locale = 'en') => {
   if (!isSciper(sciper)) {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
 
-  locale = locale || 'en';
+  const url = buildsearchUrl(sciper, locale);
 
-  var url = buildsearchUrl(sciper, locale);
-
-  return new Promise(function (resolve, reject) {
-    got(url).then(function (response) {
-      var data = JSON.parse(response.body);
+  return new Promise((resolve, reject) => {
+    got(url).then((response) => {
+      const data = JSON.parse(response.body);
       if (data.length === 0) {
         throw new TypeError('Sciper does not exist');
       }
       resolve(data[0]);
-    }).catch(function (err) {
-      reject(err);
-    });
+    }).catch((err) => reject(err));
   });
 };
 
-exports.findByEmail = function (email, locale) {
+exports.findByEmail = (email, locale = 'en') => {
   if (!validator.isEmail(email)) {
     return Promise.reject(new TypeError('Expected an email'));
   }
 
-  locale = locale || 'en';
+  const url = buildsearchUrl(email, locale);
 
-  var url = buildsearchUrl(email, locale);
-
-  return new Promise(function (resolve, reject) {
-    got(url).then(function (response) {
-      var data = JSON.parse(response.body);
+  return new Promise((resolve, reject) => {
+    got(url).then((response) => {
+      const data = JSON.parse(response.body);
       if (data.length === 0) {
         throw new TypeError('Email does not exist');
       }
       resolve(data[0]);
-    }).catch(function (err) {
-      reject(err);
-    });
+    }).catch((err) => reject(err));
   });
 };
 
-exports.find = function (string, locale) {
-  locale = locale || 'en';
+exports.find = (string, locale = 'en') => {
+  const url = buildsearchUrl(string, locale);
 
-  var url = buildsearchUrl(string, locale);
-
-  return new Promise(function (resolve, reject) {
-    got(url).then(function (response) {
-      var data = JSON.parse(response.body);
+  return new Promise((resolve, reject) => {
+    got(url).then((response) => {
+      const data = JSON.parse(response.body);
       resolve(data);
-    }).catch(function (err) {
-      reject(err);
-    });
+    }).catch((err) => reject(err));
   });
 };
 
-exports.hasPhoto = function (sciper) {
+exports.hasPhoto = (sciper) => {
   if (!isSciper(sciper)) {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
 
-  var url = PHOTO_URL + sciper;
+  const url = PHOTO_URL + sciper;
 
-  return new Promise(function (resolve, reject) {
-    got(url).then(function (response) {
+  return new Promise((resolve, reject) => {
+    got(url).then((response) => {
       if (response.headers['content-type'].match(/image/)) {
         resolve(true);
       }
       resolve(false);
-    }).catch(function (err) {
-      reject(err);
-    });
+    }).catch((err) => reject(err));
   });
 };
