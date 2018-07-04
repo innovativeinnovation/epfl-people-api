@@ -7,7 +7,7 @@ const got = require('got');
 const validator = require('validator');
 
 const SEARCH_URL = 'https://search.epfl.ch/json/ws_search.action';
-const PHOTO_URL = 'https://people.epfl.ch/cgi-bin/people/getPhoto?id=';
+const PHOTO_URL = 'https://people.epfl.ch/private/common/photos/links/';
 
 let buildsearchUrl = (q, locale = 'en') => {
   const queryParameters = '?q=' + q + '&request_locale=' + locale;
@@ -77,10 +77,7 @@ exports.hasPhoto = (sciper) => {
 
   return new Promise((resolve, reject) => {
     got(url).then((response) => {
-      if (response.headers['content-type'].match(/image/)) {
-        resolve(true);
-      }
-      resolve(false);
-    }).catch((err) => reject(err));
+      resolve(true);
+    }).catch(() => resolve(false));
   });
 };
