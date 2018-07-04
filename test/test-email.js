@@ -33,14 +33,14 @@ describe('epfl-people-api findByEmail', () => {
     });
   });
 
-  it('should find email laurent.boatto@epfl.ch', () => {
+  it('should find email gregory.charmier@epfl.ch', () => {
     return epflPeopleApi.findByEmail(
-      'laurent.boatto@epfl.ch',
+      'gregory.charmier@epfl.ch',
       null
     ).then((res) => {
-      res.name.should.equal('Boatto');
-      res.firstname.should.equal('Laurent');
-      res.office.should.equal('MA B0 519');
+      res.name.should.equal('Charmier');
+      res.firstname.should.equal('Grégory');
+      res.office.should.equal('INN 014');
     });
   });
 });
