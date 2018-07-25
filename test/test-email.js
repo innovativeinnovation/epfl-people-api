@@ -40,7 +40,7 @@ describe('epfl-people-api findByEmail', () => {
     ).then((res) => {
       res.name.should.equal('Charmier');
       res.firstname.should.equal('Grégory');
-      res.office.should.equal('INN 014');
+      res.office.should.equal('MA B0 519');
     });
   });
 });
