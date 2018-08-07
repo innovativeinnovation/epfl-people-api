@@ -1,6 +1,13 @@
 Changelog
 =========
 
+### v3.0.0 / 2018-08-07
+
+  - Drop support for Node < 8
+  - Update dependencies
+  - Fix function `hasPhoto`
+  - Fix and clean unit test
+
 ### v2.0.1 / 2018-05-16
 
   - Rewrite code
