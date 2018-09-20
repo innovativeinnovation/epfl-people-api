@@ -30,7 +30,7 @@ Install
 -------
 
 ```bash
-$ npm install --save epfl-people-api
+npm i epfl-people-api --save
 ```
 
 Usage
