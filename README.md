@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="EPFL People API" src="https://raw.githubusercontent.com/epfl-devrun/epfl-people-api/master/docs/readme/readme-logo.png">
+  <img alt="EPFL People API" src="https://raw.githubusercontent.com/innovativeinnovation/epfl-people-api/master/docs/readme/readme-logo.png">
 </p>
 
 <p align="center">
@@ -7,16 +7,16 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/epfl-devrun/epfl-people-api">
-    <img alt="Travis Status" src="https://travis-ci.org/epfl-devrun/epfl-people-api.svg?branch=master">
+  <a href="https://travis-ci.org/innovativeinnovation/epfl-people-api">
+    <img alt="Travis Status" src="https://travis-ci.org/innovativeinnovation/epfl-people-api.svg?branch=master">
   </a>
-  <a href="https://coveralls.io/github/epfl-devrun/epfl-people-api?branch=master">
-    <img alt="Coverage Status" src="https://coveralls.io/repos/github/epfl-devrun/epfl-people-api/badge.svg?branch=master"/>
+  <a href="https://coveralls.io/github/innovativeinnovation/epfl-people-api?branch=master">
+    <img alt="Coverage Status" src="https://coveralls.io/repos/github/innovativeinnovation/epfl-people-api/badge.svg?branch=master"/>
   </a>
-  <a href="https://david-dm.org/epfl-devrun/epfl-people-api">
-    <img alt="Dependency Status" src="https://david-dm.org/epfl-devrun/epfl-people-api/status.svg"/>
+  <a href="https://david-dm.org/innovativeinnovation/epfl-people-api">
+    <img alt="Dependency Status" src="https://david-dm.org/innovativeinnovation/epfl-people-api/status.svg"/>
   </a>
-  <a href="https://raw.githubusercontent.com/epfl-devrun/epfl-people-api/master/LICENSE">
+  <a href="https://raw.githubusercontent.com/innovativeinnovation/epfl-people-api/master/LICENSE">
     <img alt="Apache License 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg">
   </a>
   <a href='https://www.npmjs.com/package/epfl-people-api'>
@@ -156,6 +156,7 @@ License
 
 Apache License 2.0
 
-(c) ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017-2018.
+Original work (c) ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017-2018.  
+Modified work (c) William Belle, 2018.
 
 See the [LICENSE](LICENSE) file for more details.
