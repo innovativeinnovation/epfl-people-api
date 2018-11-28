@@ -10,7 +10,9 @@ const rewire = require('rewire');
 
 const epflPeopleApi = require('../src/index.js');
 
-describe('epfl-people-api hasPhoto', () => {
+describe('epfl-people-api hasPhoto', function () {
+  this.timeout(10000);
+
   it('should throw an exception with sciper xxx', () => {
     return epflPeopleApi.hasPhoto('xxx', 'en').then(() => {
     }).catch((err) => err.message.should.equal('Expected a sciper'));

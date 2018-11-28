@@ -10,7 +10,9 @@ const rewire = require('rewire');
 
 const epflPeopleApi = require('../src/index.js');
 
-describe('epfl-people-api find', () => {
+describe('epfl-people-api find', function () {
+  this.timeout(10000);
+
   // Sadly...
   it('shouldn\'t find Taylor Swift', () => {
     return epflPeopleApi.find(

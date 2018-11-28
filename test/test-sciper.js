@@ -10,7 +10,9 @@ const rewire = require('rewire');
 
 const epflPeopleApi = require('../src/index.js');
 
-describe('epfl-people-api findBySciper', () => {
+describe('epfl-people-api findBySciper', function () {
+  this.timeout(10000);
+
   it('should throw an exception with sciper xxx', () => {
     return epflPeopleApi.findBySciper('xxx', 'en').then(() => {
     }).catch((err) => err.message.should.equal('Expected a sciper'));
