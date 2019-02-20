@@ -47,7 +47,7 @@ describe('epfl-people-api findBySciper', function () {
     return epflPeopleApi.findBySciper(128871, 'en').then((res) => {
       res.name.should.equal('Duratti');
       res.firstname.should.equal('Lindo');
-      res.office.should.equal('INN 015');
+      res.office.should.equal('INN 018');
       res.position.should.equal('Computer Scientist');
     });
   });
@@ -62,7 +62,7 @@ describe('epfl-people-api findBySciper', function () {
     return epflPeopleApi.findBySciper(188475, undefined).then((res) => {
       res.name.should.equal('Charmier');
       res.firstname.should.equal('Grégory');
-      res.office.should.equal('MA B0 519');
+      res.office.should.equal('INN 013');
     });
   });
 });

@@ -31,7 +31,7 @@ describe('epfl-people-api findByEmail', () => {
     ).then((res) => {
       res.name.should.equal('Duratti');
       res.firstname.should.equal('Lindo');
-      res.office.should.equal('INN 015');
+      res.office.should.equal('INN 018');
     });
   });
 
@@ -42,7 +42,7 @@ describe('epfl-people-api findByEmail', () => {
     ).then((res) => {
       res.name.should.equal('Charmier');
       res.firstname.should.equal('Grégory');
-      res.office.should.equal('MA B0 519');
+      res.office.should.equal('INN 013');
     });
   });
 });
