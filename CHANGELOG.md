@@ -1,6 +1,12 @@
 Changelog
 =========
 
+### v3.0.4 / 2019-02-20
+
+  - Improve usage example
+  - Update dev dependencies
+  - Fix tests
+
 ### v3.0.3 / 2019-01-22
 
   - Update dependencies
