@@ -11,7 +11,7 @@ const validator = require('validator');
 const SEARCH_URL = 'https://search.epfl.ch/json/ws_search.action';
 const PHOTO_URL = 'https://people.epfl.ch/private/common/photos/links/';
 
-let buildsearchUrl = (q, locale = 'en') => {
+let buildSearchUrl = (q, locale) => {
   const queryParameters = '?q=' + q + '&request_locale=' + locale;
   return SEARCH_URL + queryParameters;
 };
@@ -28,7 +28,7 @@ exports.findBySciper = (sciper, locale = 'en') => {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
 
-  const url = buildsearchUrl(sciper, locale);
+  const url = buildSearchUrl(sciper, locale);
 
   return new Promise((resolve, reject) => {
     got(url).then((response) => {
@@ -46,7 +46,7 @@ exports.findByEmail = (email, locale = 'en') => {
     return Promise.reject(new TypeError('Expected an email'));
   }
 
-  const url = buildsearchUrl(email, locale);
+  const url = buildSearchUrl(email, locale);
 
   return new Promise((resolve, reject) => {
     got(url).then((response) => {
@@ -60,7 +60,7 @@ exports.findByEmail = (email, locale = 'en') => {
 };
 
 exports.find = (string, locale = 'en') => {
-  const url = buildsearchUrl(string, locale);
+  const url = buildSearchUrl(string, locale);
 
   return new Promise((resolve, reject) => {
     got(url).then((response) => {

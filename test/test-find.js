@@ -23,8 +23,7 @@ describe('epfl-people-api find', function () {
 
   it('should find Lindo Duratti', () => {
     return epflPeopleApi.find(
-      'Lindo Duratti',
-      null
+      'Lindo Duratti'
     ).then((res) => {
       res.length.should.equal(1);
       res[0].sciper.should.equal('128871');
