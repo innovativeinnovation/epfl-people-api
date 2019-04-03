@@ -37,8 +37,7 @@ describe('epfl-people-api findByEmail', () => {
 
   it('should find email gregory.charmier@epfl.ch', () => {
     return epflPeopleApi.findByEmail(
-      'gregory.charmier@epfl.ch',
-      null
+      'gregory.charmier@epfl.ch'
     ).then((res) => {
       res.name.should.equal('Charmier');
       res.firstname.should.equal('Grégory');
