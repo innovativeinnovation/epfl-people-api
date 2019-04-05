@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### v3.0.5 / 2019-04-05
+
+  - Move from `istanbul` to `nyc` for code coverage
+  - Update dev dependencies
+
 ### v3.0.4 / 2019-02-20
 
   - Improve usage example
