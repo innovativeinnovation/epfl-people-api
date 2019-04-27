@@ -1,6 +1,13 @@
 Changelog
 =========
 
+### v3.0.6 / 2019-04-27
+
+  - Improve documentation
+  - Update dev dependencies
+  - Remove `.eslintignore`
+  - Test against Node.js 12
+
 ### v3.0.5 / 2019-04-05
 
   - Move from `istanbul` to `nyc` for code coverage
