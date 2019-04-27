@@ -1,12 +1,12 @@
 {
   "name": "epfl-people-api",
   "version": "3.0.5",
-  "description": "EPFL people directory API",
+  "description": "EPFL People API",
   "keywords": [
     "EPFL",
-    "people",
+    "api",
     "directory",
-    "api"
+    "people"
   ],
   "author": "William Belle <william.belle@gmail.com>",
   "license": "Apache-2.0",

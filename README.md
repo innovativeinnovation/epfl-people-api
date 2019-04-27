@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  EPFL people directory API.
+  EPFL People API.
 </p>
 
 <p align="center">
@@ -90,7 +90,7 @@ Type: `number`
 Type: `string`<br>
 Default: `en`
 
-Returns informations in `en` or `fr`.
+Supported locales are English(`en`) and French(`fr`).
 
 ### .findByEmail(email, locale)
 
@@ -109,7 +109,7 @@ A valid email address.
 Type: `string`<br>
 Default: `en`
 
-Returns informations in `en` or `fr`.
+Supported locales are English(`en`) and French(`fr`).
 
 ### .find(q, locale)
 
@@ -128,7 +128,7 @@ The term to look for.
 Type: `string`<br>
 Default: `en`
 
-Returns informations in `en` or `fr`.
+Supported locales are English(`en`) and French(`fr`).
 
 ### .hasPhoto(sciper)
 
@@ -142,6 +142,10 @@ Type: `number`
 
 6-digit unique EPFL identification number.
 
+See also
+--------
+
+  * [who-is-sciper](https://github.com/innovativeinnovation/who-is-sciper)
 
 Contributing
 ------------
