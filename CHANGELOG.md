@@ -1,6 +1,10 @@
 Changelog
 =========
 
+### v3.0.7 / 2019-05-05
+
+  - Fix photo url
+
 ### v3.0.6 / 2019-04-27
 
   - Improve documentation
