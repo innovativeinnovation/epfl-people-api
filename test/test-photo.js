@@ -44,8 +44,8 @@ describe('epfl-people-api hasPhoto', function () {
     });
   });
 
-  it('should find photo of Mathilda Jeanneret', () => {
-    return epflPeopleApi.hasPhoto(275746).then((hasPhoto) => {
+  it('should find photo of Anastasiia Oryshchuk', () => {
+    return epflPeopleApi.hasPhoto(278890).then((hasPhoto) => {
       hasPhoto.should.equal(true);
     });
   });
