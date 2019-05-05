@@ -75,7 +75,7 @@ exports.hasPhoto = (sciper) => {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
 
-  const url = PHOTO_URL + sciper;
+  const url = PHOTO_URL + sciper + '.jpg';
 
   return new Promise((resolve, reject) => {
     got(url).then((response) => {
