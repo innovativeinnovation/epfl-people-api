@@ -14,7 +14,7 @@
     <img alt="Coverage Status" src="https://coveralls.io/repos/github/innovativeinnovation/epfl-people-api/badge.svg?branch=master"/>
   </a>
   <a href="https://david-dm.org/innovativeinnovation/epfl-people-api">
-    <img alt="Dependency Status" src="https://david-dm.org/innovativeinnovation/epfl-people-api/status.svg"/>
+    <img alt="Dependencies Status" src="https://david-dm.org/innovativeinnovation/epfl-people-api/status.svg"/>
   </a>
   <a href="https://raw.githubusercontent.com/innovativeinnovation/epfl-people-api/master/LICENSE">
     <img alt="Apache License 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg">
@@ -57,8 +57,8 @@ epflPeopleApi.findByEmail('lindo.duratti@epfl.ch', 'en').then(function(person) {
   console.log(err);
 });
 
-epflPeopleApi.find('Lindo', 'en').then(function(list) {
-  console.log(list[0].firstname); //=> 'Lindo'
+epflPeopleApi.find('Oryshchuk', 'en').then(function(list) {
+  console.log(list[0].firstname); //=> 'Anastasiia'
 }).catch(function(err) {
   console.log(err);
 });
@@ -90,7 +90,7 @@ Type: `number`
 Type: `string`<br>
 Default: `en`
 
-Supported locales are English(`en`) and French(`fr`).
+Supported locales are English (`en`) and French (`fr`).
 
 ### .findByEmail(email, locale)
 
@@ -109,7 +109,7 @@ A valid email address.
 Type: `string`<br>
 Default: `en`
 
-Supported locales are English(`en`) and French(`fr`).
+Supported locales are English (`en`) and French (`fr`).
 
 ### .find(q, locale)
 
@@ -128,7 +128,7 @@ The term to look for.
 Type: `string`<br>
 Default: `en`
 
-Supported locales are English(`en`) and French(`fr`).
+Supported locales are English (`en`) and French (`fr`).
 
 ### .hasPhoto(sciper)
 
