@@ -11,12 +11,12 @@ const validator = require('validator');
 const SEARCH_URL = 'https://search.epfl.ch/json/ws_search.action';
 const PHOTO_URL = 'https://people.epfl.ch/private/common/photos/links/';
 
-let buildSearchUrl = (q, locale) => {
+const buildSearchUrl = (q, locale) => {
   const queryParameters = '?q=' + q + '&request_locale=' + locale;
   return SEARCH_URL + queryParameters;
 };
 
-let isSciper = (sciper) => {
+const isSciper = (sciper) => {
   if (sciper !== parseInt(sciper, 10) || sciper < 100000 || sciper > 999999) {
     return false;
   }

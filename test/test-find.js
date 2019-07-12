@@ -31,9 +31,9 @@ describe('epfl-people-api find', function () {
   });
 
   it('should fail with a wrong service url', (done) => {
-    let epflPeopleApiMock = rewire('../src/index.js');
+    const epflPeopleApiMock = rewire('../src/index.js');
     epflPeopleApiMock.__set__('SEARCH_URL', 'foobar');
-    let result = epflPeopleApiMock.find('Lindo', 'en');
+    const result = epflPeopleApiMock.find('Lindo', 'en');
     result.then((response) => {
       should.fail();
       done();

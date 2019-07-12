@@ -29,9 +29,9 @@ describe('epfl-people-api hasPhoto', function () {
   });
 
   it('should fail with a wrong service url', (done) => {
-    let epflPeopleApiMock = rewire('../src/index.js');
+    const epflPeopleApiMock = rewire('../src/index.js');
     epflPeopleApiMock.__set__('PHOTO_URL', 'foobar');
-    let result = epflPeopleApiMock.hasPhoto(280556, 'en');
+    const result = epflPeopleApiMock.hasPhoto(280556, 'en');
     result.then((response) => {
       should.fail();
       done();
