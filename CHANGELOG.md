@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### v3.0.9 / 2019-11-02
+
+  - Update dependencies
+  - Test against Node.js 13
+
 ### v3.0.8 / 2019-07-12
 
   - Update dependencies
