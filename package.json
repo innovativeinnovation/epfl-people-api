@@ -15,6 +15,9 @@
     "node": ">=10"
   },
   "main": "src/index.js",
+  "files": [
+    "src/index.js"
+  ],
   "scripts": {
     "test": "eslint . && mocha",
     "coverage": "nyc mocha",
