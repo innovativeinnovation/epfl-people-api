@@ -37,7 +37,7 @@ Usage
 -----
 
 ```javascript
-var epflPeopleApi = require('epfl-people-api');
+const epflPeopleApi = require('epfl-people-api');
 
 epflPeopleApi.findBySciper(128871, 'en').then(function(person) {
   console.log(person.name);      //=> 'Duratti'
@@ -145,7 +145,7 @@ Type: `number`
 See also
 --------
 
-  * [who-is-sciper](https://github.com/innovativeinnovation/who-is-sciper)
+* [who-is-sciper](https://github.com/innovativeinnovation/who-is-sciper)
 
 Contributing
 ------------
@@ -157,7 +157,7 @@ See [Contributing](CONTRIBUTING.md).
 Developer
 ---------
 
-  * [William Belle](https://github.com/williambelle)
+* [William Belle](https://github.com/williambelle)
 
 License
 -------
