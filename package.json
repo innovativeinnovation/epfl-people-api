@@ -26,17 +26,17 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.19.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^6.2.2",
+    "mocha": "^7.1.1",
     "nyc": "^15.0.0",
-    "rewire": "^4.0.1"
+    "rewire": "^5.0.0"
   },
   "dependencies": {
-    "got": "^10.2.1",
-    "validator": "^12.1.0"
+    "got": "^10.6.0",
+    "validator": "^13.0.0"
   }
 }
