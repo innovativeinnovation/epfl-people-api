@@ -14,17 +14,17 @@ describe('epfl-people-api hasPhoto', function () {
   this.timeout(10000);
 
   it('should throw an exception with sciper xxx', () => {
-    return epflPeopleApi.hasPhoto('xxx', 'en').then(() => {
+    return epflPeopleApi.hasPhoto('xxx').then(() => {
     }).catch((err) => err.message.should.equal('Expected a sciper'));
   });
 
   it('should throw an exception with sciper 69', () => {
-    return epflPeopleApi.hasPhoto(69, 'en').then(() => {
+    return epflPeopleApi.hasPhoto(69).then(() => {
     }).catch((err) => err.message.should.equal('Expected a sciper'));
   });
 
   it('should throw an exception with sciper 1000051', () => {
-    return epflPeopleApi.hasPhoto(1000051, 'en').then(() => {
+    return epflPeopleApi.hasPhoto(1000051).then(() => {
     }).catch((err) => err.message.should.equal('Expected a sciper'));
   });
 

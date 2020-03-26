@@ -23,7 +23,7 @@ const isSciper = (sciper) => {
   return true;
 };
 
-exports.findBySciper = (sciper, locale = 'en') => {
+const findBySciper = (sciper, locale = 'en') => {
   if (!isSciper(sciper)) {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
@@ -41,7 +41,7 @@ exports.findBySciper = (sciper, locale = 'en') => {
   });
 };
 
-exports.findByEmail = (email, locale = 'en') => {
+const findByEmail = (email, locale = 'en') => {
   if (!validator.isEmail(email)) {
     return Promise.reject(new TypeError('Expected an email'));
   }
@@ -59,7 +59,7 @@ exports.findByEmail = (email, locale = 'en') => {
   });
 };
 
-exports.find = (string, locale = 'en') => {
+const find = (string, locale = 'en') => {
   const url = buildSearchUrl(string, locale);
 
   return new Promise((resolve, reject) => {
@@ -70,7 +70,7 @@ exports.find = (string, locale = 'en') => {
   });
 };
 
-exports.hasPhoto = (sciper) => {
+const hasPhoto = (sciper) => {
   if (!isSciper(sciper)) {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
@@ -83,3 +83,8 @@ exports.hasPhoto = (sciper) => {
     }).catch(() => resolve(false));
   });
 };
+
+exports.find = find;
+exports.findByEmail = findByEmail;
+exports.findBySciper = findBySciper;
+exports.hasPhoto = hasPhoto;
