@@ -16,6 +16,10 @@ const buildSearchUrl = (q, locale) => {
   return SEARCH_URL + queryParameters;
 };
 
+const buildPhotoUrl = (sciper) => {
+  return PHOTO_URL + sciper + '.jpg';
+};
+
 const isSciper = (sciper) => {
   if (sciper !== parseInt(sciper, 10) || sciper < 100000 || sciper > 999999) {
     return false;
@@ -75,7 +79,7 @@ const hasPhoto = (sciper) => {
     return Promise.reject(new TypeError('Expected a sciper'));
   }
 
-  const url = PHOTO_URL + sciper + '.jpg';
+  const url = buildPhotoUrl(sciper);
 
   return new Promise((resolve, reject) => {
     got(url).then((response) => {
@@ -84,7 +88,20 @@ const hasPhoto = (sciper) => {
   });
 };
 
+const getPhotoUrl = (sciper) => {
+  return new Promise((resolve, reject) => {
+    hasPhoto(sciper).then(function (photo) {
+      if (photo) {
+        resolve(buildPhotoUrl(sciper));
+      }
+      resolve(null);
+    }).catch((err) => reject(err));
+  });
+};
+
 exports.find = find;
 exports.findByEmail = findByEmail;
 exports.findBySciper = findBySciper;
+
 exports.hasPhoto = hasPhoto;
+exports.getPhotoUrl = getPhotoUrl;

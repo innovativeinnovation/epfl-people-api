@@ -68,6 +68,12 @@ epflPeopleApi.hasPhoto(128871).then(function(hasPhoto) {
 }).catch(function(err) {
   console.log(err);
 });
+
+epflPeopleApi.getPhotoUrl(278890).then(function(url) {
+  console.log(url); //=> https://people.epfl.ch/private/common/photos/links/278890.jpg
+}).catch(function(err) {
+  console.log(err);
+});
 ```
 
 API
@@ -135,6 +141,18 @@ Supported locales are English (`en`) and French (`fr`).
 Type: `function`
 
 Returns a Promise with a boolean as parameter.
+
+##### sciper
+
+Type: `number`
+
+6-digit unique EPFL identification number.
+
+### .getPhotoUrl(sciper)
+
+Type: `function`
+
+Returns a Promise with a string as parameter.
 
 ##### sciper
 
