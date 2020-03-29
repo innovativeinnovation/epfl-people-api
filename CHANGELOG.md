@@ -1,6 +1,12 @@
 Changelog
 =========
 
+### v4.1.0 / 2020-03-29
+
+  - Add function `getPhotoUrl`
+  - Add GitHub Actions workflow to test package
+  - Update dependencies
+
 ### v4.0.0 / 2020-01-04
 
   - Drop support for Node < 10
