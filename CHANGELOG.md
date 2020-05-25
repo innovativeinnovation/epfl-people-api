@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### v4.1.1 / 2020-05-25
+
+  - Update dependencies
+  - Test against Node.js 14
+
 ### v4.1.0 / 2020-03-29
 
   - Add function `getPhotoUrl`
