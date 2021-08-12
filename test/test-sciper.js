@@ -58,11 +58,11 @@ describe('epfl-people-api findBySciper', function () {
     });
   });
 
-  it('should find sciper 188475', function () {
-    return epflPeopleApi.findBySciper(188475, undefined).then((res) => {
-      res.name.should.equal('Charmier');
-      res.firstname.should.equal('Grégory');
-      res.office.should.equal('INN 013');
+  it('should find sciper 160781', function () {
+    return epflPeopleApi.findBySciper(160781, undefined).then((res) => {
+      res.name.should.equal('Junod');
+      res.firstname.should.equal('Yves');
+      res.office.should.equal('MA B0 449');
     });
   });
 });

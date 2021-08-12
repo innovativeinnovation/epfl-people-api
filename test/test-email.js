@@ -9,7 +9,9 @@ require('chai').should();
 
 const epflPeopleApi = require('../src/index.js');
 
-describe('epfl-people-api findByEmail', () => {
+describe('epfl-people-api findByEmail', function () {
+  this.timeout(10000);
+
   it('should throw an exception with email xxx', () => {
     return epflPeopleApi.findByEmail('xxx', 'en').then(() => {
     }).catch((err) => err.message.should.equal('Expected an email'));
@@ -35,13 +37,13 @@ describe('epfl-people-api findByEmail', () => {
     });
   });
 
-  it('should find email gregory.charmier@epfl.ch', () => {
+  it('should find email yves.junod@epfl.ch', () => {
     return epflPeopleApi.findByEmail(
-      'gregory.charmier@epfl.ch'
+      'yves.junod@epfl.ch'
     ).then((res) => {
-      res.name.should.equal('Charmier');
-      res.firstname.should.equal('Grégory');
-      res.office.should.equal('INN 013');
+      res.name.should.equal('Junod');
+      res.firstname.should.equal('Yves');
+      res.office.should.equal('MA B0 449');
     });
   });
 });
