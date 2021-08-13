@@ -24,10 +24,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install, test and coverage
+      - name: Install and coverage
         run: |
           npm i
-          npm t
           npm run coveralls
 
       - name: Coveralls
