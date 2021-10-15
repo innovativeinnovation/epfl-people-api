@@ -8,11 +8,11 @@
 const got = require('got');
 const validator = require('validator');
 
-const SEARCH_URL = 'https://search.epfl.ch/json/ws_search.action';
+const SEARCH_URL = 'https://search-api.epfl.ch/api/ldap';
 const PHOTO_URL = 'https://people.epfl.ch/private/common/photos/links/';
 
 const buildSearchUrl = (q, locale) => {
-  const queryParameters = '?q=' + q + '&request_locale=' + locale;
+  const queryParameters = '?q=' + q + '&hl=' + locale;
   return SEARCH_URL + queryParameters;
 };
 

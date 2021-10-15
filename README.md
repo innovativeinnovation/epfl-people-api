@@ -37,19 +37,19 @@ Usage
 const epflPeopleApi = require('epfl-people-api');
 
 epflPeopleApi.findBySciper(128871, 'en').then(function(person) {
-  console.log(person.name);      //=> 'Duratti'
-  console.log(person.firstname); //=> 'Lindo'
-  console.log(person.office);    //=> 'INN 018'
-  console.log(person.position);  //=> 'Computer Scientist'
+  console.log(person.name);                       //=> 'Duratti'
+  console.log(person.firstname);                  //=> 'Lindo'
+  console.log(person.accreds[0].officeList[0]);   //=> 'INN 018'
+  console.log(person.accreds[0].position);        //=> 'Computer Scientist'
 }).catch(function(err) {
   console.log(err);
 });
 
 epflPeopleApi.findByEmail('lindo.duratti@epfl.ch', 'en').then(function(person) {
-  console.log(person.firstname); //=> 'Lindo'
-  console.log(person.sciper);    //=> '128871'
-  console.log(person.phones);    //=> '+41 21 6934553'
-  console.log(person.unit);      //=> 'EXAPP'
+  console.log(person.firstname);                 //=> 'Lindo'
+  console.log(person.sciper);                    //=> '128871'
+  console.log(person.accreds[0].phoneList[0]);   //=> '+41 21 6934553'
+  console.log(person.accreds[0].acronym);        //=> 'ITOP-MWS'
 }).catch(function(err) {
   console.log(err);
 });

@@ -47,14 +47,14 @@ describe('epfl-people-api findBySciper', function () {
     return epflPeopleApi.findBySciper(128871, 'en').then((res) => {
       res.name.should.equal('Duratti');
       res.firstname.should.equal('Lindo');
-      res.office.should.equal('INN 018');
-      res.position.should.equal('Computer Scientist');
+      res.accreds[0].officeList[0].should.equal('INN 018');
+      res.accreds[0].position.should.equal('Computer Scientist');
     });
   });
 
   it('should find sciper 128871 in fr', () => {
     return epflPeopleApi.findBySciper(128871, 'fr').then((res) => {
-      res.position.should.equal('Informaticien');
+      res.accreds[0].position.should.equal('Informaticien');
     });
   });
 
@@ -62,7 +62,7 @@ describe('epfl-people-api findBySciper', function () {
     return epflPeopleApi.findBySciper(160781, undefined).then((res) => {
       res.name.should.equal('Junod');
       res.firstname.should.equal('Yves');
-      res.office.should.equal('MA B0 449');
+      res.accreds[0].officeList[0].should.equal('MA B0 449');
     });
   });
 });
