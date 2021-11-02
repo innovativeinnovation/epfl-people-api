@@ -27,76 +27,60 @@ const isSciper = (sciper) => {
   return true;
 };
 
-const findBySciper = (sciper, locale = 'en') => {
+async function findBySciper (sciper, locale = 'en') {
   if (!isSciper(sciper)) {
-    return Promise.reject(new TypeError('Expected a sciper'));
+    throw new TypeError('Expected a sciper');
   }
 
   const url = buildSearchUrl(sciper, locale);
 
-  return new Promise((resolve, reject) => {
-    got(url).then((response) => {
-      const data = JSON.parse(response.body);
-      if (data.length === 0) {
-        throw new TypeError('Sciper does not exist');
-      }
-      resolve(data[0]);
-    }).catch((err) => reject(err));
-  });
+  const [data] = await got(url).json();
+  if (!data) {
+    throw new TypeError('Sciper does not exist');
+  }
+  return data;
 };
 
-const findByEmail = (email, locale = 'en') => {
+async function findByEmail (email, locale = 'en') {
   if (!validator.isEmail(email)) {
-    return Promise.reject(new TypeError('Expected an email'));
+    throw new TypeError('Expected an email');
   }
 
   const url = buildSearchUrl(email, locale);
 
-  return new Promise((resolve, reject) => {
-    got(url).then((response) => {
-      const data = JSON.parse(response.body);
-      if (data.length === 0) {
-        throw new TypeError('Email does not exist');
-      }
-      resolve(data[0]);
-    }).catch((err) => reject(err));
-  });
+  const [data] = await got(url).json();
+  if (!data) {
+    throw new TypeError('Email does not exist');
+  }
+  return data;
 };
 
-const find = (string, locale = 'en') => {
+async function find (string, locale = 'en') {
   const url = buildSearchUrl(string, locale);
-
-  return new Promise((resolve, reject) => {
-    got(url).then((response) => {
-      const data = JSON.parse(response.body);
-      resolve(data);
-    }).catch((err) => reject(err));
-  });
+  return await got(url).json();
 };
 
-const hasPhoto = (sciper) => {
+async function hasPhoto (sciper) {
   if (!isSciper(sciper)) {
-    return Promise.reject(new TypeError('Expected a sciper'));
+    throw new TypeError('Expected a sciper');
   }
 
   const url = buildPhotoUrl(sciper);
 
-  return new Promise((resolve, reject) => {
-    got(url).then((response) => {
-      resolve(true);
-    }).catch(() => resolve(false));
-  });
+  try {
+    await got(url);
+    return true;
+  } catch {
+    return false;
+  }
 };
 
-const getPhotoUrl = (sciper) => {
-  return new Promise((resolve, reject) => {
-    hasPhoto(sciper).then(function (photo) {
-      if (photo) {
-        resolve(buildPhotoUrl(sciper));
-      }
-      resolve(null);
-    }).catch((err) => reject(err));
-  });
+async function getPhotoUrl (sciper) {
+  const photo = await hasPhoto(sciper);
+  if (photo) {
+    return buildPhotoUrl(sciper);
+  }
+  return null;
 };
 
 exports.find = find;

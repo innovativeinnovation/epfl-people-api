@@ -36,41 +36,30 @@ Usage
 ```javascript
 const epflPeopleApi = require('epfl-people-api');
 
-epflPeopleApi.findBySciper(128871, 'en').then(function(person) {
-  console.log(person.name);                       //=> 'Duratti'
-  console.log(person.firstname);                  //=> 'Lindo'
-  console.log(person.accreds[0].officeList[0]);   //=> 'INN 018'
-  console.log(person.accreds[0].position);        //=> 'Computer Scientist'
-}).catch(function(err) {
-  console.log(err);
-});
+const person = await epflPeopleApi.findBySciper(128871, 'en');
+console.log(person.firstname);                  // => 'Lindo'
+console.log(person.name);                       // => 'Duratti'
+console.log(person.accreds[0].officeList[0]);   // => 'INN 018'
+console.log(person.accreds[0].position);        // => 'Computer Scientist'
 
-epflPeopleApi.findByEmail('lindo.duratti@epfl.ch', 'en').then(function(person) {
-  console.log(person.firstname);                 //=> 'Lindo'
-  console.log(person.sciper);                    //=> '128871'
-  console.log(person.accreds[0].phoneList[0]);   //=> '+41 21 6934553'
-  console.log(person.accreds[0].acronym);        //=> 'ITOP-MWS'
-}).catch(function(err) {
-  console.log(err);
-});
 
-epflPeopleApi.find('Oryshchuk', 'en').then(function(list) {
-  console.log(list[0].firstname); //=> 'Anastasiia'
-}).catch(function(err) {
-  console.log(err);
-});
+const user = await epflPeopleApi.findByEmail('lindo.duratti@epfl.ch', 'en');
+console.log(user.firstname);                 //=> 'Lindo'
+console.log(user.sciper);                    //=> '128871'
+console.log(user.accreds[0].phoneList[0]);   //=> '+41 21 6934553'
+console.log(user.accreds[0].acronym);        //=> 'ITOP-MWS'
 
-epflPeopleApi.hasPhoto(128871).then(function(hasPhoto) {
-  console.log(hasPhoto); //=> False
-}).catch(function(err) {
-  console.log(err);
-});
 
-epflPeopleApi.getPhotoUrl(278890).then(function(url) {
-  console.log(url); //=> https://people.epfl.ch/private/common/photos/links/278890.jpg
-}).catch(function(err) {
-  console.log(err);
-});
+const list = await epflPeopleApi.find('Oryshchuk', 'en');
+console.log(list[0].firstname);   //=> 'Anastasiia'
+
+
+const photo = await epflPeopleApi.hasPhoto(128871);
+console.log(photo);   //=> false
+
+
+const url = await epflPeopleApi.getPhotoUrl(278890);
+console.log(url);   //=> https://people.epfl.ch/private/common/photos/links/278890.jpg
 ```
 
 API
