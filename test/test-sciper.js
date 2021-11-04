@@ -5,64 +5,83 @@
  * See the LICENSE file for more details.
  */
 
-const should = require('chai').should();
+const chai = require('chai');
 const rewire = require('rewire');
+
+const assert = chai.assert;
+chai.use(require('chai-as-promised'));
 
 const epflPeopleApi = require('../src/index.js');
 
 describe('epfl-people-api findBySciper', function () {
   this.timeout(10000);
 
-  it('should throw an exception with sciper xxx', () => {
-    return epflPeopleApi.findBySciper('xxx', 'en').then(() => {
-    }).catch((err) => err.message.should.equal('Expected a sciper'));
+  it('should throw an exception with sciper xxx', async () => {
+    const getException = async () => {
+      await epflPeopleApi.findBySciper('xxx', 'en');
+    };
+    return assert.isRejected(getException(), TypeError).then((err) => {
+      assert.equal(err.message, 'Expected a sciper');
+    });
   });
 
-  it('should throw an exception with sciper 69', () => {
-    return epflPeopleApi.findBySciper(69).then(() => {
-    }).catch((err) => err.message.should.equal('Expected a sciper'));
+  it('should throw an exception with sciper 69', async () => {
+    const getException = async () => {
+      await epflPeopleApi.findBySciper(69);
+    };
+    return assert.isRejected(getException(), TypeError).then((err) => {
+      assert.equal(err.message, 'Expected a sciper');
+    });
   });
 
-  it('should throw an exception with sciper 1000051', () => {
-    return epflPeopleApi.findBySciper(1000051, 'en').then(() => {
-    }).catch((err) => err.message.should.equal('Expected a sciper'));
+  it('should throw an exception with sciper 1000051', async () => {
+    const getException = async () => {
+      await epflPeopleApi.findBySciper(1000051, 'en');
+    };
+    return assert.isRejected(getException(), TypeError).then((err) => {
+      assert.equal(err.message, 'Expected a sciper');
+    });
   });
 
-  it('should throw an exception with sciper 100000', () => {
-    return epflPeopleApi.findBySciper(100000, 'en').then(() => {
-    }).catch((err) => err.message.should.equal('Sciper does not exist'));
+  it('should throw an exception with sciper 100000', async () => {
+    const getException = async () => {
+      await epflPeopleApi.findBySciper(100000, 'en');
+    };
+    return assert.isRejected(getException(), TypeError).then((err) => {
+      assert.equal(err.message, 'Sciper does not exist');
+    });
   });
 
-  it('should fail with a wrong service url', (done) => {
+  it('should fail with a wrong service url', async () => {
     const epflPeopleApiMock = rewire('../src/index.js');
     epflPeopleApiMock.__set__('SEARCH_URL', 'foobar');
-    const result = epflPeopleApiMock.findBySciper(280556, 'en');
-    result.then((response) => {
-      should.fail();
-      done();
-    }).catch((reason) => done());
-  });
 
-  it('should find sciper 128871 in en', () => {
-    return epflPeopleApi.findBySciper(128871, 'en').then((res) => {
-      res.name.should.equal('Duratti');
-      res.firstname.should.equal('Lindo');
-      res.accreds[0].officeList[0].should.equal('INN 018');
-      res.accreds[0].position.should.equal('Computer Scientist');
+    const getException = async () => {
+      await epflPeopleApiMock.findBySciper(280556, 'en');
+    };
+    return assert.isRejected(getException(), TypeError).then((err) => {
+      assert.equal(err.code, 'ERR_INVALID_URL');
+      assert.include(err.message, 'Invalid URL');
     });
   });
 
-  it('should find sciper 128871 in fr', () => {
-    return epflPeopleApi.findBySciper(128871, 'fr').then((res) => {
-      res.accreds[0].position.should.equal('Informaticien');
-    });
+  it('should find sciper 128871 in en', async () => {
+    const person = await epflPeopleApi.findBySciper(128871, 'en');
+    assert.equal(person.name, 'Duratti');
+    assert.equal(person.firstname, 'Lindo');
+    assert.equal(person.accreds[0].officeList[0], 'INN 018');
+    assert.equal(person.accreds[0].position, 'Computer Scientist');
   });
 
-  it('should find sciper 160781', function () {
-    return epflPeopleApi.findBySciper(160781, undefined).then((res) => {
-      res.name.should.equal('Junod');
-      res.firstname.should.equal('Yves');
-      res.accreds[0].officeList[0].should.equal('MA B0 449');
-    });
+  it('should find sciper 128871 in fr', async () => {
+    const person = await epflPeopleApi.findBySciper(128871, 'fr');
+    assert.equal(person.accreds[0].position, 'Informaticien');
+  });
+
+  it('should find sciper 160781', async () => {
+    const person = await epflPeopleApi.findBySciper(160781, undefined);
+    assert.equal(person.name, 'Junod');
+    assert.equal(person.firstname, 'Yves');
+    assert.equal(person.accreds[0].officeList[0], 'MA B0 449');
   });
 });
