@@ -5,7 +5,9 @@
  * See the LICENSE file for more details.
  */
 
-require('chai').should();
+const chai = require('chai');
+const assert = chai.assert;
+chai.use(require('chai-as-promised'));
 
 const epflPeopleApi = require('../src/index.js');
 
@@ -13,37 +15,38 @@ describe('epfl-people-api findByEmail', function () {
   this.timeout(10000);
 
   it('should throw an exception with email xxx', () => {
-    return epflPeopleApi.findByEmail('xxx', 'en').then(() => {
-    }).catch((err) => err.message.should.equal('Expected an email'));
+    const getException = async () => {
+      await epflPeopleApi.findByEmail('xxx', 'en');
+    };
+    return assert.isRejected(getException(), TypeError).then((err) => {
+      assert.equal(err.message, 'Expected an email');
+    });
   });
 
   // Sadly...
   it('should throw an exception with email taylor.swift@epfl.ch', () => {
-    return epflPeopleApi.findByEmail(
-      'taylor.swift@epfl.ch',
-      'en'
-    ).then(() => {
-    }).catch((err) => err.message.should.equal('Email does not exist'));
+    const getException = async () => {
+      await epflPeopleApi.findByEmail('taylor.swift@epfl.ch', 'en');
+    };
+    return assert.isRejected(getException(), TypeError).then((err) => {
+      assert.equal(err.message, 'Email does not exist');
+    });
   });
 
-  it('should find email lindo.duratti@epfl.ch', () => {
-    return epflPeopleApi.findByEmail(
+  it('should find email lindo.duratti@epfl.ch', async () => {
+    const person = await epflPeopleApi.findByEmail(
       'lindo.duratti@epfl.ch',
       'en'
-    ).then((res) => {
-      res.name.should.equal('Duratti');
-      res.firstname.should.equal('Lindo');
-      res.accreds[0].officeList[0].should.equal('INN 018');
-    });
+    );
+    assert.equal(person.name, 'Duratti');
+    assert.equal(person.firstname, 'Lindo');
+    assert.equal(person.accreds[0].officeList[0], 'INN 018');
   });
 
-  it('should find email yves.junod@epfl.ch', () => {
-    return epflPeopleApi.findByEmail(
-      'yves.junod@epfl.ch'
-    ).then((res) => {
-      res.name.should.equal('Junod');
-      res.firstname.should.equal('Yves');
-      res.accreds[0].officeList[0].should.equal('MA B0 449');
-    });
+  it('should find email yves.junod@epfl.ch', async () => {
+    const person = await epflPeopleApi.findByEmail('yves.junod@epfl.ch');
+    assert.equal(person.name, 'Junod');
+    assert.equal(person.firstname, 'Yves');
+    assert.equal(person.accreds[0].officeList[0], 'MA B0 449');
   });
 });
