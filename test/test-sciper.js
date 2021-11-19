@@ -16,7 +16,7 @@ const epflPeopleApi = require('../src/index.js');
 describe('epfl-people-api findBySciper', function () {
   this.timeout(10000);
 
-  it('should throw an exception with sciper xxx', async () => {
+  it('should throw an exception with sciper xxx', () => {
     const getException = async () => {
       await epflPeopleApi.findBySciper('xxx', 'en');
     };
@@ -25,7 +25,7 @@ describe('epfl-people-api findBySciper', function () {
     });
   });
 
-  it('should throw an exception with sciper 69', async () => {
+  it('should throw an exception with sciper 69', () => {
     const getException = async () => {
       await epflPeopleApi.findBySciper(69);
     };
@@ -34,7 +34,7 @@ describe('epfl-people-api findBySciper', function () {
     });
   });
 
-  it('should throw an exception with sciper 1000051', async () => {
+  it('should throw an exception with sciper 1000051', () => {
     const getException = async () => {
       await epflPeopleApi.findBySciper(1000051, 'en');
     };
@@ -43,7 +43,7 @@ describe('epfl-people-api findBySciper', function () {
     });
   });
 
-  it('should throw an exception with sciper 100000', async () => {
+  it('should throw an exception with sciper 100000', () => {
     const getException = async () => {
       await epflPeopleApi.findBySciper(100000, 'en');
     };
@@ -52,7 +52,7 @@ describe('epfl-people-api findBySciper', function () {
     });
   });
 
-  it('should fail with a wrong service url', async () => {
+  it('should fail with a wrong service url', () => {
     const epflPeopleApiMock = rewire('../src/index.js');
     epflPeopleApiMock.__set__('SEARCH_URL', 'foobar');
 

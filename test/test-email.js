@@ -23,7 +23,6 @@ describe('epfl-people-api findByEmail', function () {
     });
   });
 
-  // Sadly...
   it('should throw an exception with email taylor.swift@epfl.ch', () => {
     const getException = async () => {
       await epflPeopleApi.findByEmail('taylor.swift@epfl.ch', 'en');
