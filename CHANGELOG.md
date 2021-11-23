@@ -1,6 +1,12 @@
 Changelog
 =========
 
+### v6.0.0 / 2021-11-23
+
+  - Migrate to new API
+  - Rewrite code
+  - Test against Node.js 17
+
 ### v5.0.0 / 2021-08-13
 
   - Drop support for Node < 12
