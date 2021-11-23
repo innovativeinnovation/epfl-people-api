@@ -1,7 +1,7 @@
 {
   "name": "epfl-people-api",
   "version": "5.0.0",
-  "description": "EPFL People API",
+  "description": "EPFL People API Client",
   "keywords": [
     "EPFL",
     "api",

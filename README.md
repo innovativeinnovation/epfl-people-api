@@ -1,9 +1,9 @@
 <p align="center">
-  <img alt="EPFL People API" src="https://raw.githubusercontent.com/innovativeinnovation/epfl-people-api/master/docs/readme/readme-logo.png">
+  <img alt="EPFL People API Client" src="https://raw.githubusercontent.com/innovativeinnovation/epfl-people-api/master/docs/readme/readme-logo.png">
 </p>
 
 <p align="center">
-  EPFL People API.
+  EPFL People API Client.
 </p>
 
 <p align="center">
