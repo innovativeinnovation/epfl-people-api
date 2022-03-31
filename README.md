@@ -39,15 +39,15 @@ const epflPeopleApi = require('epfl-people-api');
 const person = await epflPeopleApi.findBySciper(128871, 'en');
 console.log(person.firstname);                  // => 'Lindo'
 console.log(person.name);                       // => 'Duratti'
-console.log(person.accreds[0].officeList[0]);   // => 'INN 018'
+console.log(person.accreds[0].officeList[0]);   // => 'MA A0 393'
 console.log(person.accreds[0].position);        // => 'Computer Scientist'
 
 
 const user = await epflPeopleApi.findByEmail('lindo.duratti@epfl.ch', 'en');
 console.log(user.firstname);                 //=> 'Lindo'
 console.log(user.sciper);                    //=> '128871'
-console.log(user.accreds[0].phoneList[0]);   //=> '+41 21 6934553'
-console.log(user.accreds[0].acronym);        //=> 'ITOP-MWS'
+console.log(user.accreds[0].phoneList[0]);   //=> '+41216934553'
+console.log(user.accreds[0].acronym);        //=> 'ISAS-FSD'
 
 
 const list = await epflPeopleApi.find('Oryshchuk', 'en');
