@@ -39,7 +39,7 @@ describe('epfl-people-api findByEmail', function () {
     );
     assert.equal(person.name, 'Duratti');
     assert.equal(person.firstname, 'Lindo');
-    assert.equal(person.accreds[0].officeList[0], 'INN 018');
+    assert.equal(person.accreds[0].officeList[0], 'MA A0 393');
   });
 
   it('should find email yves.junod@epfl.ch', async () => {
