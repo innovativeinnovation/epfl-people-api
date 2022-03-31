@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### v6.0.1 / 2022-03-31
+
+  - Update dependencies
+  - Fix tests
+
 ### v6.0.0 / 2021-11-23
 
   - Migrate to new API
