@@ -1,5 +1,5 @@
 /*
- * (c) William Belle, 2020-2021.
+ * (c) William Belle, 2020-2022.
  * See the LICENSE file for more details.
  */
 
