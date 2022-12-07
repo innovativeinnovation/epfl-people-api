@@ -39,7 +39,7 @@ const epflPeopleApi = require('epfl-people-api');
 const person = await epflPeopleApi.findBySciper(128871, 'en');
 console.log(person.firstname);                  // => 'Lindo'
 console.log(person.name);                       // => 'Duratti'
-console.log(person.accreds[0].officeList[0]);   // => 'MA A0 393'
+console.log(person.accreds[0].officeList[0]);   // => 'INN 018'
 console.log(person.accreds[0].position);        // => 'Computer Scientist'
 
 
