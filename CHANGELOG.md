@@ -1,6 +1,15 @@
 Changelog
 =========
 
+### v7.0.0 / 2022-12-08
+
+  - Drop support for Node < 14
+  - Update dev dependencies
+  - Update Github Actions checkout to v3
+  - Update Github Actions setup-node to v3
+  - Test against Node.js 18
+  - Test against Node.js 19
+
 ### v6.0.1 / 2022-03-31
 
   - Update dependencies
