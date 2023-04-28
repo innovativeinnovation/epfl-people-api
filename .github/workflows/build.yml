@@ -30,10 +30,9 @@ jobs:
           npm run coveralls
 
       - name: Coveralls
-        uses: coverallsapp/github-action@v1.1.2
+        uses: coverallsapp/github-action@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          flag-name: run-node-${{ matrix.node }}
+          flag-name: node-${{ matrix.node }}
           parallel: true
 
   finish:
@@ -43,7 +42,7 @@ jobs:
 
     steps:
       - name: Coveralls Finished
-        uses: coverallsapp/github-action@v1.1.2
+        uses: coverallsapp/github-action@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
+          carryforward: "node-14,node-16,node-17,node-18,node-19"
