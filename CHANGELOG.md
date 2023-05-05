@@ -1,6 +1,12 @@
 Changelog
 =========
 
+### v7.0.1 / 2023-05-05
+
+  - Update Github Actions coveralls to v2
+  - Test against Node.js 20
+  - Fix tests
+
 ### v7.0.0 / 2022-12-08
 
   - Drop support for Node < 14
