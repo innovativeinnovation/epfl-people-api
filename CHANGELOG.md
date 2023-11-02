@@ -1,6 +1,14 @@
 Changelog
 =========
 
+### v8.0.0 / 2023-11-02
+
+  - Drop support for Node < 16
+  - Update dependencies
+  - Update Github Actions checkout to v4
+  - Update Github Actions setup-node to v4
+  - Test against Node.js 21
+
 ### v7.0.1 / 2023-05-05
 
   - Update Github Actions coveralls to v2
