@@ -69,7 +69,7 @@ describe('epfl-people-api findBySciper', function () {
     const person = await epflPeopleApi.findBySciper(128871, 'en');
     assert.equal(person.name, 'Duratti');
     assert.equal(person.firstname, 'Lindo');
-    assert.equal(person.accreds[0].officeList[0], 'INN 016');
+    assert.equal(person.accreds[0].officeList[0], 'INN 015');
     assert.equal(person.accreds[0].position, 'Computer Scientist');
   });
 
